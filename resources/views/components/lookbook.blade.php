@@ -19,7 +19,7 @@
             </div>
             <div class="col-lg-5 offset-lg-1">
                 <div class="lookbok-pic">
-                    <img src="{{asset('img/lookbok.jpg')}}" alt="">
+                    <img src="{{asset('storage/musc-royal.jpg')}}" alt="">
                     <div class="pic-text">fashion</div>
                 </div>
             </div>

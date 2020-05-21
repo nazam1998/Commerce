@@ -21,7 +21,7 @@
             <div class="col-lg-3 col-sm-6 mix all dresses bags">
                 <div class="single-product-item">
                     <figure>
-                        <a href="#"><img src="{{asset('img/products/img-1.jpg')}}" alt=""></a>
+                        <a href="#"><img src="{{asset('storage/musc-royal.jpg')}}" alt=""></a>
                         <div class="p-status">new</div>
                     </figure>
                     <div class="product-text">
@@ -33,7 +33,7 @@
             <div class="col-lg-3 col-sm-6 mix all dresses bags">
                 <div class="single-product-item">
                     <figure>
-                        <a href="#"><img src="{{asset('img/products/img-2.jpg')}}" alt=""></a>
+                        <a href="#"><img src="{{asset('storage/musc-royal.jpg')}}" alt=""></a>
                         <div class="p-status sale">sale</div>
                     </figure>
                     <div class="product-text">
@@ -45,7 +45,7 @@
             <div class="col-lg-3 col-sm-6 mix all shoes accesories">
                 <div class="single-product-item">
                     <figure>
-                        <a href="#"><img src="{{asset('img/products/img-3.jpg')}}" alt=""></a>
+                        <a href="#"><img src="{{asset('storage/musc-royal.jpg')}}" alt=""></a>
                         <div class="p-status">new</div>
                     </figure>
                     <div class="product-text">
@@ -57,7 +57,7 @@
             <div class="col-lg-3 col-sm-6 mix all shoes accesories">
                 <div class="single-product-item">
                     <figure>
-                        <a href="#"><img src="{{asset('img/products/img-4.jpg')}}" alt=""></a>
+                        <a href="#"><img src="{{asset('storage/musc-royal.jpg')}}" alt=""></a>
                         <div class="p-status popular">popular</div>
                     </figure>
                     <div class="product-text">
@@ -69,7 +69,7 @@
             <div class="col-lg-3 col-sm-6 mix all dresses shoes">
                 <div class="single-product-item">
                     <figure>
-                        <a href="#"><img src="{{asset('img/products/img-5.jpg')}}" alt=""></a>
+                        <a href="#"><img src="{{asset('storage/musc-royal.jpg')}}" alt=""></a>
                         <div class="p-status">new</div>
                     </figure>
                     <div class="product-text">
@@ -81,7 +81,7 @@
             <div class="col-lg-3 col-sm-6 mix all accesories bags">
                 <div class="single-product-item">
                     <figure>
-                        <a href="#"><img src="{{asset('img/products/img-6.jpg')}}" alt=""></a>
+                        <a href="#"><img src="{{asset('storage/musc-royal.jpg')}}" alt=""></a>
                         <div class="p-status sale">sale</div>
                     </figure>
                     <div class="product-text">
@@ -93,7 +93,7 @@
             <div class="col-lg-3 col-sm-6 mix all dresses bags">
                 <div class="single-product-item">
                     <figure>
-                        <a href="#"><img src="{{asset('img/products/img-7.jpg')}}" alt=""></a>
+                        <a href="#"><img src="{{asset('storage/musc-royal.jpg')}}" alt=""></a>
                     </figure>
                     <div class="product-text">
                         <h6>One piece bodysuit</h6>
@@ -104,7 +104,7 @@
             <div class="col-lg-3 col-sm-6 mix all accesories bags">
                 <div class="single-product-item">
                     <figure>
-                        <a href="#"><img src="{{asset('img/products/img-8.jpg')}}" alt=""></a>
+                        <a href="#"><img src="{{asset('storage/musc-royal.jpg')}}" alt=""></a>
                         <div class="p-status popular">popular</div>
                     </figure>
                     <div class="product-text">

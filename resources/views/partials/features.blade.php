@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="single-features-ads first">
-                        <img src="img/ic{{asset('ons/f-delivery.png')}}" alt="">
+                        <img src="{{asset('img/icons/f-delivery.png')}}" alt="">
                         <h4>Free shipping</h4>
                         <p>Fusce urna quam, euismod sit amet mollis quis, vestibulum quis velit. Vesti bulum mal
                             esuada aliquet libero viverra cursus. </p>
@@ -38,7 +38,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="single-box-item first-box">
-                                <img src="{{asset('img/f-box-1.jpg')}}" alt="">
+                                <img src="{{asset('storage/musc-nabil.png')}}" alt="">
                                 <div class="box-text">
                                     <span class="trend-year">2019 Party</span>
                                     <h2>Jewelry</h2>
@@ -49,7 +49,7 @@
                         </div>
                         <div class="col-lg-12">
                             <div class="single-box-item second-box">
-                                <img src="{{asset('img/f-box-2.jpg')}}" alt="">
+                                <img src="{{asset('storage/musc-nabil.png')}}" alt="">
                                 <div class="box-text">
                                     <span class="trend-year">2019 Trend</span>
                                     <h2>Footwear</h2>
@@ -61,7 +61,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="single-box-item large-box">
-                        <img src="{{asset('img/f-box-3.jpg')}}" alt="">
+                        <img src="{{asset('storage/musc-nabil.png')}}" alt="">
                         <div class="box-text">
                             <span class="trend-year">2019 Party</span>
                             <h2>Collection</h2>
