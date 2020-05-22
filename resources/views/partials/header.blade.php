@@ -14,8 +14,8 @@
                 </a>
             </div>
             <div class="user-access">
-                <a href="#">Register</a>
-                <a href="#" class="in">Sign in</a>
+            <a href="{{route('register')}}">Register</a>
+            <a href="{{route('login')}}" class="in">Sign in</a>
             </div>
             <nav class="main-menu mobile-menu">
                 <ul>

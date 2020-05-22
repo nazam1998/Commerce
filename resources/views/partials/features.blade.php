@@ -60,7 +60,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="single-box-item large-box">
+                    <div class="single-box-item">
                         <img src="{{asset('storage/musc-nabil.png')}}" alt="">
                         <div class="box-text">
                             <span class="trend-year">2019 Party</span>
