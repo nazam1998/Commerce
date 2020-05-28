@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Categorie;
 use App\Produit;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProduitController extends Controller
 {
@@ -14,7 +16,8 @@ class ProduitController extends Controller
      */
     public function index()
     {
-        //
+        $produits = Produit::paginate(12);
+        return view('admin.produits.index', compact('produits'));
     }
 
     /**
@@ -24,7 +27,8 @@ class ProduitController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Categorie::all();
+        return view('admin.produit.add', compact('categories'));
     }
 
     /**
@@ -35,7 +39,24 @@ class ProduitController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nom' => 'required|string|max:100',
+            'prix' => 'required|numeric|between:0,99.99',
+            'image' => 'required|image',
+            'etat' => 'required|string',
+            'categorie' => 'required',
+            'categorie.*' => 'integer|min:1|max:' . count(Categorie::all()),
+        ]);
+
+        $image = Storage::disk('public')->put('', $request->image);
+        $produit = new Produit();
+        $produit->nom = $request->nom;
+        $produit->prix = $request->prix;
+        $produit->etat = $request->etat;
+        $produit->nom = $image;
+        $produit->save();
+        $produit->categories()->attach($request->categorie);
+        return redirect()->route('produit.index')->with('msg', 'Nouveau Produit ajouté avec succès');
     }
 
     /**
@@ -46,7 +67,7 @@ class ProduitController extends Controller
      */
     public function show(Produit $produit)
     {
-        //
+        return view('admin.produit.show', compact('produit'));
     }
 
     /**
@@ -57,7 +78,8 @@ class ProduitController extends Controller
      */
     public function edit(Produit $produit)
     {
-        //
+        $categories = Categorie::all();
+        return view('admin.produit.edit', compact('produit', 'categories'));
     }
 
     /**
@@ -69,7 +91,31 @@ class ProduitController extends Controller
      */
     public function update(Request $request, Produit $produit)
     {
-        //
+        $request->validate([
+            'nom' => 'required|string|max:100',
+            'prix' => 'required|numeric|between:0,99.99',
+            'image' => 'nullable|image',
+            'etat' => 'required|string',
+            'categorie' => 'required',
+            'categorie.*' => 'integer|min:1|max:' . count(Categorie::all()),
+        ]);
+        if ($request->hasFile('image')) {
+            if (Storage::disk('public')->exists($produit->image)) {
+                Storage::disk('public')->delete($produit->image);
+            }
+            $image = Storage::disk('public')->put('', $request->image);
+            $produit->nom = $image;
+        }
+
+        $produit->nom = $request->nom;
+        $produit->prix = $request->prix;
+        $produit->etat = $request->etat;
+        $produit->save();
+
+        $produit->categories()->detach();
+        $produit->categories()->attach($request->categorie);
+
+        return redirect()->route('produit.index')->with('msg', 'Produit modifié avec succès');
     }
 
     /**
@@ -80,6 +126,10 @@ class ProduitController extends Controller
      */
     public function destroy(Produit $produit)
     {
-        //
+        if (Storage::disk('public')->exists($produit->image)) {
+            Storage::disk('public')->delete($produit->image);
+        }
+        $produit->delete();
+        return redirect()->route('produit.index')->with('msg', 'Produit modifié avec succès');
     }
 }

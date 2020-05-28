@@ -14,7 +14,7 @@ class PanierController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**

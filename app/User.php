@@ -36,4 +36,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function produits()
+    {
+        return $this->belongsToMany('App\Produit', 'panier', 'produit_id', 'user_id');
+    }
 }
