@@ -2911,5 +2911,16 @@ ol {
 }
 
 
+table img {
+  width: 100px;
+}
 
+table td,
+table th {
+  text-align: center;
+}
+
+table a {
+  margin: 10px auto;
+}
 

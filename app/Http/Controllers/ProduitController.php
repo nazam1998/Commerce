@@ -28,7 +28,7 @@ class ProduitController extends Controller
     public function create()
     {
         $categories = Categorie::all();
-        return view('admin.produit.add', compact('categories'));
+        return view('admin.produits.add', compact('categories'));
     }
 
     /**
@@ -41,7 +41,7 @@ class ProduitController extends Controller
     {
         $request->validate([
             'nom' => 'required|string|max:100',
-            'prix' => 'required|numeric|between:0,99.99',
+            'prix' => 'required|numeric|between:0,99999.99',
             'image' => 'required|image',
             'etat' => 'required|string',
             'categorie' => 'required',
@@ -53,7 +53,7 @@ class ProduitController extends Controller
         $produit->nom = $request->nom;
         $produit->prix = $request->prix;
         $produit->etat = $request->etat;
-        $produit->nom = $image;
+        $produit->image = $image;
         $produit->save();
         $produit->categories()->attach($request->categorie);
         return redirect()->route('produit.index')->with('msg', 'Nouveau Produit ajouté avec succès');
@@ -67,7 +67,7 @@ class ProduitController extends Controller
      */
     public function show(Produit $produit)
     {
-        return view('admin.produit.show', compact('produit'));
+        return view('admin.produits.show', compact('produit'));
     }
 
     /**
@@ -79,7 +79,7 @@ class ProduitController extends Controller
     public function edit(Produit $produit)
     {
         $categories = Categorie::all();
-        return view('admin.produit.edit', compact('produit', 'categories'));
+        return view('admin.produits.edit', compact('produit', 'categories'));
     }
 
     /**
@@ -93,7 +93,7 @@ class ProduitController extends Controller
     {
         $request->validate([
             'nom' => 'required|string|max:100',
-            'prix' => 'required|numeric|between:0,99.99',
+            'prix' => 'required|numeric|between:0,99999.99',
             'image' => 'nullable|image',
             'etat' => 'required|string',
             'categorie' => 'required',

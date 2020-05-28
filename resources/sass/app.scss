@@ -6,3 +6,14 @@
 @import"./css/slicknav.min.css";
 @import"./css/style.css";
 
+table{
+    img{
+        width: 100px;
+    }
+    td,th{
+        text-align: center;
+    }
+    a{
+        margin: 10px auto;
+    }
+}
