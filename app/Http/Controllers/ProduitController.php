@@ -45,6 +45,7 @@ class ProduitController extends Controller
             'image' => 'required|image',
             'etat' => 'required|string',
             'categorie' => 'required',
+            'slug'=>'required|string',
             'categorie.*' => 'integer|min:1|max:' . count(Categorie::all()),
         ]);
 

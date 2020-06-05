@@ -19,6 +19,7 @@ class CreateProduitsTable extends Migration
             $table->string('image');
             $table->float('prix');
             $table->string('etat');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
         Schema::create('produit_categorie', function (Blueprint $table) {

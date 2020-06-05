@@ -10,8 +10,11 @@ use Illuminate\Support\Facades\Storage;
 $factory->define(Produit::class, function (Faker $faker) {
     $image = Str::random(10) . '.jpg';
     Storage::disk('public')->copy('seeder/musc-royal.jpg', $image);
+    $title = $faker->sentence;
+    $slug = Str::slug($title, '-');
     return [
-        'nom' => $faker->cityPrefix,
+        'nom' => $faker->name,
+        'slug'=>$slug,
         'image' => $image,
         'prix'=>$faker->numberBetween($min = 1000, $max = 9000),
         'etat'=>'Normal'
